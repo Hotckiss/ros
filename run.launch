@@ -1,0 +1,6 @@
+<launch>
+    <node pkg='turtlesim' type='turtlesim_node' name='turtle1' />
+    <node pkg='turtlesim' type='turtle_teleop_key' name='splinter' output='screen' />
+    <node pkg='rosservice' type='rosservice' name='turtle2' args='call /spawn 0.0 0.0 0.0 turtle2' />
+    <node pkg='hw1' name='main' output='screen' type='turtles.py' />
+</launch>
