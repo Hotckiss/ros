@@ -6,9 +6,6 @@ class DontCrushDuckieTaskSolution(TaskSolution):
     def __init__(self, generated_task):
         super().__init__(generated_task)
 
-    def see_duck(self, image):
-        return 4.0 * self.initial_yellow_count < self.count_yellow(image)
-
     def count(self, image):
         hsv = cv2.cvtColor(image, cv2.COLOR_RGB2HSV)
         return np.array(cv2.inRange(hsv, np.array([10, 100, 100], dtype='uint8'), np.array([40, 255, 255], dtype='uint8')), dtype=np.bool).sum()
